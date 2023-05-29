@@ -19,6 +19,10 @@ const ProductImage = styled.Image`
   width: 100px;
 `
 export const ProductScreen = () => {
+    const {water, setWater} = useContext(goWaterContext)
+    const addWater = () => {
+        setWater(water + 1)
+    }
     return (
         <ProductView>
             <ProductImageView>
@@ -29,6 +33,11 @@ export const ProductScreen = () => {
             </Text>
             <Text>Безкоштовна доставка</Text>
             <Text>Від <Text>192₴</Text></Text>
+            <Button icon="plus" style={{width: 200}} mode="contained-tonal"
+                    onPress={() => addWater()}
+            >
+                Додати
+            </Button>
         </ProductView>
     )
 }
